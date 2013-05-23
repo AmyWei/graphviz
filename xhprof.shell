@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ `uname -m` = "x86_64" ]; then
+    ARCH="linux64"
+else
+    ARCH="linux32"
+fi
+
+wget http://pecl.php.net/get/xhprof-0.9.3.tgz
+tar zxvf xhprof-0.9.3.tgz
+cd xhprof-0.9.3
+phpize
+./configure
+make & make install
